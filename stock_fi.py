@@ -46,9 +46,8 @@ for g in gListGrp:
             fiin = craw_fiin(i, d)
             gDfFi['fiin'][j] = fiin
             
-            if fiin > -1:
-                close = gDfFi['收盤價'][j]
-                gDfFi['Temp'][j] = float(fiin) * float(close)
+            close = gDfFi['收盤價'][j]
+            gDfFi['Temp'][j] = float(fiin) * float(close)
             
         gDfFi.to_csv(r'D:\python\stock\fi\\' + str(i) + '.TW_FI_ORI.csv')
         gDfFi = gDfFi[gDfFi['fiin'] > -1]
